@@ -1,5 +1,8 @@
 package com.pov.design.patterns.observer;
 
+import com.pov.design.patterns.behavioral.observer.Observer;
+import com.pov.design.patterns.behavioral.observer.TemperatureDisplay;
+import com.pov.design.patterns.behavioral.observer.WeatherStation;
 import org.junit.jupiter.api.*;
 
 import java.io.ByteArrayOutputStream;

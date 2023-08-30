@@ -1,0 +1,200 @@
+Design Patterns:
+================
+Design patterns are typical solutions to common problems in software design. 
+Each pattern is like a blueprint that you can customize to solve a particular desing problem in your code. 
+
+Benefits of Patterns:
+=====================
+Patterns are a toolkit of solutions to common problems in software design.
+They define a common language that helps your team communicate more efficiently.
+
+Classification:
+===============
+Design patterns differ by their complexity, level of detail and scale of applicability. 
+They can be categorized by their intent and divided into three groups. 
+
+History of Patterns:
+====================
+Who invented patterns? When a solution gets repeated over and over again in various projects, someone eventually puts a name to it and describe the solution in detail. That's basically how a pattern gets discovered. 
+
+Three main groups of Patterns:
+==============================
+1. Creational patterns provide object creation mechanisms that increase flexibility and reuse of existing code.
+2. Structural patterns explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient. 
+3. Behavioral patterns take care of effective communication and the assignment of responsibilities between objects.  
+
+Catalog of Design Patterns:
+===========================
+1. Creational Design Patterns
+-> These patterns provide various object creation mechanisms which increases flexibility and reuse of existing code. 
+a. Factory Method Design Pattern
+b. Abstract Factory Design Pattern 
+c. Builder Design Pattern
+d. Prototype Design Pattern
+e. Singleton Design Pattern
+
+2. Structural Design Patterns
+-> These patterns explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient. 
+a. Adapter Design Pattern
+b. Bridge Design Pattern
+c. Composite Design Pattern
+d. Decorator Design Pattern
+e. Fascade Design Pattern
+f. Flyweight Design Pattern
+g. Proxy Design Pattern
+
+3. Behavioral Design Patterns
+-> These patterns are concerned with Algorithms and the assignment of responsibilites between objects.
+a. Chain of Responsibilities Design Pattern
+b. Command Design Pattern
+c. Iterator Design Pattern
+d. Mediator Design Pattern
+e. Memento Design Pattern
+f. Observer Design Pattern
+g. State Design Pattern
+h. Strategy Design Pattern
+i. Template Design Pattern
+j. Visitor Design Pattern 
+
+a. Factory Method Design Pattern:
+===========================
+Also known as virtual Constructor
+Factory method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created. 
+
+Problem statement:
+-----------------
+Imagine you are creating a logistics management system. The first version of system only handles truck transportation. 
+App becomes very popular, getting requests to include other transportations also. Adding this functionality would require lot of code change. 
+
+Solution:
+---------
+Factory method design pattern suggests that you replace direct object construction calls with calls to special factory method. 
+Products: Objects often returned by factory method
+
+Example 1:
+----------
+Logistics: class
+planDelivery: method
+createTransport: method (Transport t=createTransport())
+
+RoadLogistics: class extends Logistics
+createTransport: method (return new Truck())
+
+SeaLogistics: class extends Logistics
+createTransport: method (return new Ship())
+
+Transport: interface
+deliver: method
+
+Truck: class implements Transport
+deliver: method (deliver by land)
+
+Ship: class implements Transport
+deliver: method (deliver by sea)
+
+
+b. Abstract Factory Method Design Pattern
+=========================================
+Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes. 
+
+Example:
+
+Bank: interface
+getBankName: method
+
+HDFC: class implements Bank
+getBankName: method
+
+ICICI: class implements Bank
+getBankName: method
+
+SBI: class implements Bank
+getBankName: method
+
+Loan: abstract class
+getInterestRate: method 
+
+c. Builder Design Patterns:
+============================
+Builder is a creational design pattern that lets you construct complex objects step by step. 
+The pattern allows you to produce different types and representations of an object using the same construction code.
+
+d. Prototype Design Pattern:
+===========================
+The Prototype design pattern is used to create new objects by copying or cloning an existing object, known as the prototype
+
+e. Chain of Responsibility Design Pattern:
+==========================================
+The Chain of Responsibility is a way to handle tasks or requests by passing them through a group of people or things, like links in a chain
+Each link has a specific ability to do something, and if one link can't handle the task, it passes it to the next link in the chain. This continues until the task is done or no more links can handle it
+
+f. Command Design Pattern:
+==========================
+Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. 
+This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
+
+g. Iterator Design Pattern:
+===========================
+The Iterator Design Pattern provides a way to access the elements of a collection without exposing its underlying representation. 
+It also allows traversal of the collection sequentially
+
+h. Mediator Design Pattern
+==========================
+The Mediator Design Pattern is a behavioral pattern that promotes loose coupling between components by centralizing the communication and interaction between them. 
+It defines an object (the mediator) that encapsulates how a set of objects interact, thus reducing the direct dependencies between these objects. 
+Instead of having multiple objects communicate directly with each other, they communicate through the mediator.
+
+i. Memento Design Pattern
+=========================
+The Memento design pattern is used to capture and restore an object's internal state without exposing its internal structure
+
+f. Observer Design Pattern
+==========================
+The Observer design pattern is used to establish a dependency between objects so that when one object changes its state, all its dependents are notified and updated automatically
+
+g. State Design Pattern
+========================
+The State design pattern is used to allow an object to change its behavior when its internal state changes
+
+h. Strategy Design Pattern
+==========================
+The Strategy design pattern is used to define a family of interchangeable algorithms, allowing a client to choose an appropriate algorithm from the available options
+
+i. Template Design Pattern
+==========================
+The Template Method design pattern is used to define the structure of an algorithm while allowing subclasses to provide specific implementations for some of the steps.
+
+j. Visitor Design Pattern 
+===========================
+The Visitor design pattern allows you to add new operations to a class hierarchy without modifying the classes themselves. It's particularly useful when you have a hierarchy of classes and you want to perform different actions on each class without changing their structure
+
+k. Adapter Design Pattern
+=========================
+The Adapter design pattern is used to allow two incompatible interfaces to work together. It acts as a bridge between the two interfaces, enabling them to interact without changing their source code
+
+
+l. Bridge Design Pattern
+========================
+The Bridge design pattern is used to separate abstraction from implementation, allowing both to vary independently. It's particularly useful when you have multiple dimensions of variability in your system
+
+
+m. Composite Design Pattern
+===========================
+The Composite design pattern is used to treat individual objects and compositions of objects uniformly. It composes objects into tree structures to represent part-whole hierarchies.
+
+
+n. Decorator Design Pattern
+============================
+The Decorator design pattern is used to dynamically add behavior or responsibilities to objects without modifying their code. It allows you to wrap objects in other objects to create flexible and extensible structures
+
+o. Fascade Design Pattern
+==========================
+The Facade design pattern is used to provide a simplified interface to a complex system, making it easier for clients to interact with that system. It acts as a higher-level interface that wraps and hides the complexities of the underlying subsystems
+
+p. Flyweight Design Pattern
+============================
+The Flyweight design pattern is used to minimize memory usage by sharing objects that are similar in some way. It is particularly useful when you have a large number of objects that have some intrinsic state that can be shared among multiple instances
+
+q. Proxy Design Pattern
+========================
+The Proxy design pattern is used to control access to an object by providing a surrogate or placeholder for that object. It can be used for various purposes such as access control, logging, caching, etc
